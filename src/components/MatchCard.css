@@ -1,0 +1,161 @@
+.match-card {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  border-radius: 16px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.match-card a:hover {
+  text-decoration: underline;
+}
+
+.match-card a {
+  text-decoration: none;
+  cursor: pointer;
+  color: inherit;
+}
+
+.match-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, #667eea 0%, #764ba2 100%);
+}
+
+.match-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+  border-color: rgba(255, 255, 255, 0.3);
+}
+
+.match-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+  gap: 1rem;
+}
+
+.match-category {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.375rem 0.875rem;
+  border-radius: 20px;
+  color: white;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  flex-shrink: 0;
+}
+
+.match-id {
+  font-size: 0.875rem;
+  color: #64748b;
+  font-weight: 500;
+  font-family: 'Monaco', 'Menlo', monospace;
+  background: rgba(100, 116, 139, 0.1);
+  padding: 0.25rem 0.5rem;
+  border-radius: 6px;
+  flex-shrink: 0;
+}
+
+.match-content {
+  margin: 1rem 0;
+}
+
+.match-text {
+  font-size: 1.125rem;
+  line-height: 1.7;
+  color: #1e293b;
+  margin: 0;
+  font-weight: 400;
+  text-align: left;
+}
+
+.fact-footer {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  margin-top: 1.25rem;
+  padding-top: 1rem;
+  border-top: 1px solid rgba(148, 163, 184, 0.2);
+}
+
+.fact-reference {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: #64748b;
+  font-size: 0.875rem;
+  font-style: italic;
+  background: rgba(100, 116, 139, 0.05);
+  padding: 0.5rem 0.75rem;
+  border-radius: 8px;
+  transition: all 0.2s ease;
+}
+
+.fact-reference:hover {
+  background: rgba(100, 116, 139, 0.1);
+  color: #475569;
+}
+
+.reference-icon {
+  opacity: 0.7;
+  flex-shrink: 0;
+}
+
+.reference-text {
+  font-weight: 500;
+}
+
+/* Animation for card entrance */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.match-card {
+  animation: fadeInUp 0.4s ease-out;
+}
+
+/* Mobile responsive adjustments */
+@media (max-width: 640px) {
+  .match-card {
+    padding: 1.25rem;
+  }
+  
+  .match-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.75rem;
+  }
+  
+  .match-text {
+    font-size: 1rem;
+    line-height: 1.6;
+  }
+  
+  .fact-footer {
+    justify-content: flex-start;
+  }
+  
+  .fact-reference {
+    font-size: 0.8125rem;
+  }
+}
